@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Surprise ❤️</title>
+
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial;
+      background: pink;
+      padding-top: 80px;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 40px;
+      color: red;
+    }
+
+    /* ✅ Button Container */
+    .btnContainer {
+      margin-top: 50px;
+      position: relative;
+      height: 200px;
+    }
+
+    button {
+      font-size: 20px;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    /* ✅ YES Button Fixed */
+    #yesBtn {
+      background: green;
+      color: white;
+      margin-right: 30px;
+      z-index: 10;
+      position: relative;
+    }
+
+    /* ✅ NO Button Moves */
+    #noBtn {
+      background: red;
+      color: white;
+      position: absolute;
+      left: 55%;
+      top: 0;
+      transition: 0.2s ease;
+    }
+
+    #result {
+      margin-top: 19px;
+      font-size: 22px;
+      color: darkred;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Gajodhar ❤️</h1>
+  <h1>Will You Be My Valentine?</h1>
+
+  <!-- ✅ Buttons Below Title -->
+  <div class="btnContainer">
+    <button id="yesBtn" onclick="yesClick()">Yes 😍</button>
+    <button id="noBtn" onmouseover="moveNoBtn()">No 😢</button>
+  </div>
+
+  <h2 id="result"></h2>
+
+  <script>
+    function yesClick() {
+      document.getElementById("result").innerHTML =
+        " Yaah❤️ Ab tum officially meri Valentine ho 😍🌹";
+    }
+
+    function moveNoBtn() {
+      let noBtn = document.getElementById("noBtn");
+
+      // Container size limits
+      let maxX = 300;
+      let maxY = 120;
+
+      let x = Math.random() * maxX;
+      let y = Math.random() * maxY;
+
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    }
+  </script>
+
+</body>
+</html>
